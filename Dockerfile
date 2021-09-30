@@ -1,5 +1,5 @@
-ARG NGINX_VERSION=1.18.0
-ARG NGX_BROTLI_COMMIT=25f86f0bac1101b6512135eac5f93c49c63609e3
+ARG NGINX_VERSION=1.21.3
+ARG NGX_BROTLI_COMMIT=9aec15e2aa6feea2113119ba06460af70ab3ea62
 ARG CONFIG="\
 		--prefix=/etc/nginx \
 		--sbin-path=/usr/sbin/nginx \
@@ -155,7 +155,7 @@ RUN \
 	&& ln -sf /dev/stderr /var/log/nginx/error.log
 
 COPY nginx.conf /etc/nginx/nginx.conf
-COPY nginx.vh.default.conf /etc/nginx/conf.d/default.conf
+# COPY nginx.vh.default.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80 443
 
